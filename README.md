@@ -1,6 +1,6 @@
 # QA Automation
 
-Automated End-to-End (E2E) testing platform. Built with **Playwright** and **TypeScript** to ensure messaging reliability, broadcast template integrity, and UI consistency.
+Automated End-to-End (E2E) & API testing platform. Built with **Playwright** and **TypeScript** to ensure messaging reliability, broadcast template integrity, and UI consistency.
 
 ## 🛠️ Technology Stack
 
