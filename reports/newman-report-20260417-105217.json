@@ -1,0 +1,1460 @@
+{
+  "collection": {
+    "_": {
+      "postman_id": "bc4264a5-4690-4f4a-bc76-6d5950f5d6ad"
+    },
+    "item": [
+      {
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "name": "Health Check Stress",
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "path": [
+              "health-check"
+            ],
+            "host": [
+              "{{baseUrl}}"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "method": "GET"
+        },
+        "response": [],
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+              "type": "text/javascript",
+              "exec": [
+                "pm.test('Status code is 200', function () {",
+                "  pm.response.to.have.status(200);",
+                "});",
+                "",
+                "pm.test('Response time is below threshold', function () {",
+                "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                "});",
+                "",
+                "pm.test('Response has a body', function () {",
+                "  pm.expect(pm.response.text()).to.not.equal('');",
+                "});"
+              ],
+              "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [],
+    "variable": [
+      {
+        "type": "any",
+        "value": "https://practice.expandtesting.com/notes/api",
+        "key": "baseUrl"
+      }
+    ],
+    "info": {
+      "_postman_id": "bc4264a5-4690-4f4a-bc76-6d5950f5d6ad",
+      "name": "Expand Testing Notes API - Newman Stress Demo",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+      "description": {
+        "content": "Minimal collection for safe Newman stress-test portfolio demo against the health-check endpoint.",
+        "type": "text/plain"
+      }
+    }
+  },
+  "environment": {
+    "_": {
+      "postman_variable_scope": "environment",
+      "postman_exported_at": "2026-04-17T00:00:00.000Z",
+      "postman_exported_using": "Codex"
+    },
+    "id": "e24fb447-4d3a-431d-b70d-ec4d17f2b9aa",
+    "name": "Newman Health Demo Environment",
+    "values": [
+      {
+        "type": "any",
+        "value": "https://practice.expandtesting.com/notes/api",
+        "key": "baseUrl"
+      },
+      {
+        "type": "any",
+        "value": "2000",
+        "key": "maxResponseTimeMs"
+      }
+    ]
+  },
+  "globals": {
+    "id": "dc96ec46-f795-4cf3-89d3-e9b27f3dea05",
+    "values": []
+  },
+  "run": {
+    "stats": {
+      "iterations": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "items": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "scripts": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "requests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "tests": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "assertions": {
+        "total": 15,
+        "pending": 0,
+        "failed": 0
+      },
+      "testScripts": {
+        "total": 5,
+        "pending": 0,
+        "failed": 0
+      },
+      "prerequestScripts": {
+        "total": 0,
+        "pending": 0,
+        "failed": 0
+      }
+    },
+    "timings": {
+      "responseAverage": 423.6,
+      "responseMin": 296,
+      "responseMax": 841,
+      "responseSd": 209.6249985092427,
+      "dnsAverage": 0,
+      "dnsMin": 0,
+      "dnsMax": 0,
+      "dnsSd": 0,
+      "firstByteAverage": 0,
+      "firstByteMin": 0,
+      "firstByteMax": 0,
+      "firstByteSd": 0,
+      "started": 1776397939936,
+      "completed": 1776397943091
+    },
+    "executions": [
+      {
+        "cursor": {
+          "position": 0,
+          "iteration": 0,
+          "length": 1,
+          "cycles": 5,
+          "empty": false,
+          "eof": false,
+          "bof": true,
+          "cr": false,
+          "ref": "07e641b3-9454-4b56-b00d-af0e3b82475e",
+          "httpRequestId": "339e5e9d-2b37-4d93-acca-489f0e4fa322"
+        },
+        "item": {
+          "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+          "name": "Health Check Stress",
+          "request": {
+            "description": {
+              "content": "Safe endpoint for repeated execution using Newman.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is below threshold', function () {",
+                  "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                  "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                  "});",
+                  "",
+                  "pm.test('Response has a body', function () {",
+                  "  pm.expect(pm.response.text()).to.not.equal('');",
+                  "});"
+                ],
+                "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "notes",
+              "api",
+              "health-check"
+            ],
+            "host": [
+              "practice",
+              "expandtesting",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "5f25f542-a1f7-45b1-810c-4c1ad8d9faaf",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "practice.expandtesting.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "d50ac9c7-676b-41b1-a229-2d56b515a28e",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "GET, POST, PUT, DELETE, PATCH"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"3e-FE3Nfnlblw5s6WOK197+HBp7tw8\""
+            },
+            {
+              "key": "set-cookie",
+              "value": "express:sess=eyJmbGFzaCI6e319; path=/; httponly"
+            },
+            {
+              "key": "set-cookie",
+              "value": "express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0; path=/; httponly"
+            },
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 03:52:20 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              50,
+              48,
+              48,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              101,
+              115,
+              32,
+              65,
+              80,
+              73,
+              32,
+              105,
+              115,
+              32,
+              82,
+              117,
+              110,
+              110,
+              105,
+              110,
+              103,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 841,
+          "responseSize": 62
+        },
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is below threshold",
+            "skipped": false
+          },
+          {
+            "assertion": "Response has a body",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "32c020bd-a53d-4200-b521-a89922052176",
+          "length": 1,
+          "cycles": 5,
+          "position": 0,
+          "iteration": 1,
+          "cr": true,
+          "httpRequestId": "1bcdb325-f712-43bd-9c5a-eeae16fb240d"
+        },
+        "item": {
+          "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+          "name": "Health Check Stress",
+          "request": {
+            "description": {
+              "content": "Safe endpoint for repeated execution using Newman.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is below threshold', function () {",
+                  "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                  "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                  "});",
+                  "",
+                  "pm.test('Response has a body', function () {",
+                  "  pm.expect(pm.response.text()).to.not.equal('');",
+                  "});"
+                ],
+                "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "notes",
+              "api",
+              "health-check"
+            ],
+            "host": [
+              "practice",
+              "expandtesting",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "3d63c8ff-5914-47d0-a158-89bfbf03c17f",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "practice.expandtesting.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "6a20c315-ea4f-4113-8dc4-de7b5177c9ea",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "GET, POST, PUT, DELETE, PATCH"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"3e-FE3Nfnlblw5s6WOK197+HBp7tw8\""
+            },
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 03:52:21 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              50,
+              48,
+              48,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              101,
+              115,
+              32,
+              65,
+              80,
+              73,
+              32,
+              105,
+              115,
+              32,
+              82,
+              117,
+              110,
+              110,
+              105,
+              110,
+              103,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 350,
+          "responseSize": 62
+        },
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is below threshold",
+            "skipped": false
+          },
+          {
+            "assertion": "Response has a body",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "e02a8f1e-8f5e-4646-8cc0-7c8ebc1ca53a",
+          "length": 1,
+          "cycles": 5,
+          "position": 0,
+          "iteration": 2,
+          "cr": true,
+          "httpRequestId": "69a65928-20e7-4b92-a335-3981d4a4ae8c"
+        },
+        "item": {
+          "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+          "name": "Health Check Stress",
+          "request": {
+            "description": {
+              "content": "Safe endpoint for repeated execution using Newman.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is below threshold', function () {",
+                  "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                  "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                  "});",
+                  "",
+                  "pm.test('Response has a body', function () {",
+                  "  pm.expect(pm.response.text()).to.not.equal('');",
+                  "});"
+                ],
+                "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "notes",
+              "api",
+              "health-check"
+            ],
+            "host": [
+              "practice",
+              "expandtesting",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "90e83c71-2d27-4543-a325-beacec836a74",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "practice.expandtesting.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "faa99c21-b2cb-4f42-b731-fd7b18b75eff",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "GET, POST, PUT, DELETE, PATCH"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"3e-FE3Nfnlblw5s6WOK197+HBp7tw8\""
+            },
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 03:52:21 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              50,
+              48,
+              48,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              101,
+              115,
+              32,
+              65,
+              80,
+              73,
+              32,
+              105,
+              115,
+              32,
+              82,
+              117,
+              110,
+              110,
+              105,
+              110,
+              103,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 301,
+          "responseSize": 62
+        },
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is below threshold",
+            "skipped": false
+          },
+          {
+            "assertion": "Response has a body",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "8dd5cb14-4d86-46f8-8446-1abe10df5002",
+          "length": 1,
+          "cycles": 5,
+          "position": 0,
+          "iteration": 3,
+          "cr": true,
+          "httpRequestId": "b8711840-107d-47c2-8dfa-8804bdb539cb"
+        },
+        "item": {
+          "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+          "name": "Health Check Stress",
+          "request": {
+            "description": {
+              "content": "Safe endpoint for repeated execution using Newman.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is below threshold', function () {",
+                  "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                  "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                  "});",
+                  "",
+                  "pm.test('Response has a body', function () {",
+                  "  pm.expect(pm.response.text()).to.not.equal('');",
+                  "});"
+                ],
+                "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "notes",
+              "api",
+              "health-check"
+            ],
+            "host": [
+              "practice",
+              "expandtesting",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "9bb1fb5e-0f63-4a3a-9c92-049cccdaddbe",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "practice.expandtesting.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "358b84ba-2963-4fd1-9b9b-0f09635d7ec4",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "GET, POST, PUT, DELETE, PATCH"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"3e-FE3Nfnlblw5s6WOK197+HBp7tw8\""
+            },
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 03:52:22 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              50,
+              48,
+              48,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              101,
+              115,
+              32,
+              65,
+              80,
+              73,
+              32,
+              105,
+              115,
+              32,
+              82,
+              117,
+              110,
+              110,
+              105,
+              110,
+              103,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 296,
+          "responseSize": 62
+        },
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is below threshold",
+            "skipped": false
+          },
+          {
+            "assertion": "Response has a body",
+            "skipped": false
+          }
+        ]
+      },
+      {
+        "cursor": {
+          "ref": "5e1bae20-abaa-4775-bd26-f093b5e2d858",
+          "length": 1,
+          "cycles": 5,
+          "position": 0,
+          "iteration": 4,
+          "cr": true,
+          "httpRequestId": "cb6a5288-5b60-4363-987e-c2cb3c6a1fd5"
+        },
+        "item": {
+          "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+          "name": "Health Check Stress",
+          "request": {
+            "description": {
+              "content": "Safe endpoint for repeated execution using Newman.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "health-check"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET"
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c00a9b7b-d876-4d70-9711-bd9362d6c684",
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test('Response time is below threshold', function () {",
+                  "  const threshold = Number(pm.environment.get('maxResponseTimeMs') || 2000);",
+                  "  pm.expect(pm.response.responseTime).to.be.below(threshold);",
+                  "});",
+                  "",
+                  "pm.test('Response has a body', function () {",
+                  "  pm.expect(pm.response.text()).to.not.equal('');",
+                  "});"
+                ],
+                "_lastExecutionId": "9abb1277-8d0e-4a30-bd32-3a0ab9fb76c3"
+              }
+            }
+          ]
+        },
+        "request": {
+          "description": {
+            "content": "Safe endpoint for repeated execution using Newman.",
+            "type": "text/plain"
+          },
+          "url": {
+            "protocol": "https",
+            "path": [
+              "notes",
+              "api",
+              "health-check"
+            ],
+            "host": [
+              "practice",
+              "expandtesting",
+              "com"
+            ],
+            "query": [],
+            "variable": []
+          },
+          "header": [
+            {
+              "key": "User-Agent",
+              "value": "PostmanRuntime/7.39.1",
+              "system": true
+            },
+            {
+              "key": "Accept",
+              "value": "*/*",
+              "system": true
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache",
+              "system": true
+            },
+            {
+              "key": "Postman-Token",
+              "value": "d3232132-1f73-4dea-ba00-9302fcf64e73",
+              "system": true
+            },
+            {
+              "key": "Host",
+              "value": "practice.expandtesting.com",
+              "system": true
+            },
+            {
+              "key": "Accept-Encoding",
+              "value": "gzip, deflate, br",
+              "system": true
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive",
+              "system": true
+            },
+            {
+              "key": "Cookie",
+              "value": "express:sess=eyJmbGFzaCI6e319; express:sess.sig=tdt42nQZiQvICqmrvHQ1_16fHk0",
+              "system": true
+            }
+          ],
+          "method": "GET"
+        },
+        "response": {
+          "id": "a1ebcdc2-e2fd-4936-b3c2-f267a0def856",
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "key": "access-control-allow-credentials",
+              "value": "true"
+            },
+            {
+              "key": "access-control-allow-methods",
+              "value": "GET, POST, PUT, DELETE, PATCH"
+            },
+            {
+              "key": "access-control-allow-headers",
+              "value": "Origin, X-Requested-With, Authorization, Content-Type, Accept, X-Auth-Token"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "content-encoding",
+              "value": "br"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"3e-FE3Nfnlblw5s6WOK197+HBp7tw8\""
+            },
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 03:52:22 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=5"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            }
+          ],
+          "stream": {
+            "type": "Buffer",
+            "data": [
+              123,
+              34,
+              115,
+              117,
+              99,
+              99,
+              101,
+              115,
+              115,
+              34,
+              58,
+              116,
+              114,
+              117,
+              101,
+              44,
+              34,
+              115,
+              116,
+              97,
+              116,
+              117,
+              115,
+              34,
+              58,
+              50,
+              48,
+              48,
+              44,
+              34,
+              109,
+              101,
+              115,
+              115,
+              97,
+              103,
+              101,
+              34,
+              58,
+              34,
+              78,
+              111,
+              116,
+              101,
+              115,
+              32,
+              65,
+              80,
+              73,
+              32,
+              105,
+              115,
+              32,
+              82,
+              117,
+              110,
+              110,
+              105,
+              110,
+              103,
+              34,
+              125
+            ]
+          },
+          "cookie": [],
+          "responseTime": 330,
+          "responseSize": 62
+        },
+        "id": "adb95983-11be-40fd-a213-62cb1aa62411",
+        "assertions": [
+          {
+            "assertion": "Status code is 200",
+            "skipped": false
+          },
+          {
+            "assertion": "Response time is below threshold",
+            "skipped": false
+          },
+          {
+            "assertion": "Response has a body",
+            "skipped": false
+          }
+        ]
+      }
+    ],
+    "transfers": {
+      "responseTotal": 310
+    },
+    "failures": [],
+    "error": null
+  }
+}
